@@ -1,11 +1,11 @@
-FROM python:3.7
+FROM python:3.8-slim-buster
 LABEL maintainer="Suresh Thomas"
+RUN python3 -m venv /opt/venv
+COPY requirements.txt .
+RUN /opt/venv/bin/pip install -r requirements.txt
 
 COPY . /app
 WORKDIR /app
-python -m venv env
-source env/bin/activate
-RUN pip install -r requirements.txt
 
 # command to run on container start
-CMD [ "python", "app.py" ]
+CMD [ "/opt/venv/bin/python", "app.py" ]
