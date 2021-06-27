@@ -51,5 +51,5 @@ jobs:
       run: |
         docker build -t go-helloworld .
         docker tag go-helloworld pixelpotato/go-helloworld:v1.0.0
-        docker push pixelpotato/go-helloworld:v1.0.0
+    #    docker push pixelpotato/go-helloworld:v1.0.0
 
